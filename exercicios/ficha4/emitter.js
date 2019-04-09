@@ -11,3 +11,5 @@ Emitter.prototype.on = function(type, listener) {
     } 
     this.events[type].push(listener);
 }
+
+module.exports=Emitter;

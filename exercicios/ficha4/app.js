@@ -1,13 +1,19 @@
-var obj = {
-    name: "John",
-    age: "45",
-    gender: "male"
-}
+// var obj = {
+//     name: "John",
+//     age: "45",
+//     gender: "male"
+// }
 
-var str = JSON.stringify(obj);
+// var str = JSON.stringify(obj);
 
-console.log(str);
+// console.log(str);
 
-var strjson = JSON.parse(str);
+// var strjson = JSON.parse(str);
 
-console.log(strjson);
+// console.log(strjson);
+
+var Emitter = require("./emitter.js");
+
+Emitter('start', function() {
+    console.log("Hello world!");
+})
