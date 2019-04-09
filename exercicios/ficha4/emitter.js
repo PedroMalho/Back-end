@@ -10,6 +10,15 @@ Emitter.prototype.on = function(type, listener) {
         this.events[type]=[];
     } 
     this.events[type].push(listener);
-}
+};
+
+Emitter.prototype.emit = function(event_name) {
+    if (this.events[event_name] != undefined) {
+        this.events[event_name].forEach(function(listener) {
+            listener();
+        });
+    };
+};
+
 
 module.exports=Emitter;

@@ -13,7 +13,10 @@
 // console.log(strjson);
 
 var Emitter = require("./emitter.js");
+var emtr = new Emitter();
 
-Emitter('start', function() {
+
+emtr.on('start', function() {
     console.log("Hello world!");
-})
+});
+
