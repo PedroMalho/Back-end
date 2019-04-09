@@ -23,3 +23,7 @@ function performDownload(started, update, completed){
 
 //performDownload(started, update, completed);
 
+var ArrayUtils = require('./ArrayUtils.js');
+var x = ArrayUtils.concatenate([1,2,3,4],[5,6,7,8]);
+
+console.log(x);
