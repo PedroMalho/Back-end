@@ -6,7 +6,7 @@
         "age": "25",
         "id": 1
     },
-    "person2:" {
+    "person2": {
         "firstname": "André",
         "lastname": "Faria",
         "profession": "librarian",
@@ -22,8 +22,8 @@
     },
     "person4": {
         "firstname": "Fabricio",
-        "lastname": "Micael",
-        "profession": "gaymer",
+        "lastname": "Rodrigues",
+        "profession": "wow noob",
         "age": "22",
         "id": 4
     },
