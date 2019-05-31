@@ -1,15 +1,20 @@
-var express = require('express');
-var router = express.Router();
+var mysql = require('mysql');
 
-// Require our contrllers.
-var person_controller = require('../controllers/personController');
+//Connect to database
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'personsdb'
+});
+connection.connect();
 
-// person notes
-
-//GET request for one person.
-router.get('/person/:id', person_controller.person_detail);
-
-//GET request for list of all persons.
-router.get('/persons', person_controller.person_list);
-
-module.exports = router;
+exports.author_detail = function (req, res, next) {
+    var userId = req.params.id;
+    var query = 'SELECT * FROM persons WHERE id=?';
+    connection.query(query, userId, function (err, result, field) {
+        if (err) throw err;
+        // res.render('person', {title: 'Person Detail', person: result[0]});
+        res.send(result[0]);
+    });
+};

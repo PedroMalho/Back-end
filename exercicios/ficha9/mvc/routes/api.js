@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-// GET home page
+// Require our controllers.
+var person_controller = require('../controllers/personController');
 
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
-});
+// person notes
+
+//GET request for one person.
+router.get('/person/:id', person_controller.person_detail);
+
+//GET request for list of all persons.
+//router.get('/persons', person_controller.person_list);
 
 module.exports = router;
