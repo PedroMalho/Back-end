@@ -9,12 +9,12 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-exports.author_detail = function (req, res, next) {
+exports.person_detail = function (req, res, next) {
     var userId = req.params.id;
     var query = 'SELECT * FROM persons WHERE id=?';
     connection.query(query, userId, function (err, result, field) {
         if (err) throw err;
-        // res.render('person', {title: 'Person Detail', person: result[0]});
-        res.send(result[0]);
+        res.render('person', {title: 'Person Detail', person: result[0]});
+        //res.send(result[0]);
     });
 };
